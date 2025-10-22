@@ -4,7 +4,7 @@ Authors: Frederik Hendrickx and Carl Vangestel, 2025
 
 License: CC-BY 4.0
 
-This repository is designed to help taxonomists seamlessly **integrate genomic data into their research on species identification, divergence, and speciation**. Our goal is to provide clear, step-by-step workflows that take you from raw sequencing reads all the way to advanced analyses of genome-wide patterns of species differentiation. The workflows are especially tailored for **complexes of closely related species**, including cryptic species and recent radiations, where subtle genetic differences are key.
+This repository is designed to help taxonomists seamlessly **integrate genomic data into their research on species identification, divergence, and speciation**. Our goal is to provide clear, step-by-step workflows that take you from raw sequencing reads all the way to advanced analyses of genome-wide patterns of species differentiation. The workflows are especially tailored for **complexes of closely related species**, including cryptic species and recent radiations, where single gene analyses generally have provide insufficient taxonomic insight. 
   
 Here, you’ll find guidance on:  
 **- Preprocessing raw sequencing data** to ensure high-quality inputs  
