@@ -23,6 +23,6 @@ Each workflow is modular and reproducible, guiding you from raw data to meaningf
 
 
 ## Workflows
-- [Whole Genome Resequencing Data](./whole_genome_resequencing/)
-- [RAD/GBS without Reference Genome](./rad_gbs_without_reference/)
+- [Whole-Genome Resequencing Data](./whole_genome_resequencing/)
 - [RAD/GBS with Reference Genome](./rad_gbs_with_reference/)
+- [RAD/GBS without Reference Genome](./rad_gbs_without_reference/)
