@@ -13,8 +13,7 @@ Here, you’ll find guidance on:
 **- Analyzing genetic relationships among individuals**  
 **- Visualizing results to uncover patterns of divergence and relatedness**  
   
-Depending on the type of sequencing data that you have available, three different workflows are proposed. The first one assumes that you have sequencing data available from the analysis that cover the entire genome (whole genome resequencing data) and the reference genome of the focal or a related species. The second workflow assumes the availability of Restriction-site Associated DNA (RADseq) or Genotype-by-sequencing (GBS) data available as well as a reference genome. The last option assumes that no reference genome is available.
-  
+
 Depending on the type of sequencing data you have, we offer three tailored workflows:  
 **1.	Whole-Genome Resequencing** – For studies with sequencing data that cover the entire genome and a reference genome is available for the focal species or a close relative.  
 **2.	RAD/GBS with Reference Genome** – For datasets generated via Restriction-site Associated DNA (RADseq) or Genotyping-by-Sequencing (GBS), where a reference genome is available.  
