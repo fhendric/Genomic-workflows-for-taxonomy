@@ -68,9 +68,10 @@ ATACCAGAAGACGGTCAGTGTCGATATTAAAACCTCTTCTGCCCATCCTATCACGTGATTTGACAGTATAACGGACATTA
 FFFFFFEFCEEGEFEDFF@FDFFFFF?FEFEFFFFFF<BFFFDFFFFF8GFFFFFFDF6;EFFFFF=F;GFEFAFFF9FFFFFFBGFGEFFFEFFFFFF2AGFFFF9GFF%GFF6E(;F?
 ```
 
-For subsequent analyses, it is recommended to use the sampleID as basename of the fastq files and should match the sampleID’s in the “samples.txt” file.  
-
 ### Genome (fasta) 
 
 The genome sequence generally comes in regular fasta format with each genomic sequence (contig, scaffold or chromosome) coming in two lines. The first line, starting with “>”, gives the name of the sequence, while the second line gives the actual nucleotide sequence.  
 
+### Samples
+
+The `./samples` folder should contain a simple text file, called `samples.txt`, that lists all sample names. Important, the sample names should match the basename of the raw (or cleaned) fastq files. Hence, if the fastq files of the first sample are `sample01_1.fq.gz` and `sample01_2.fq.gz`, the sample name should be **sample01** in the `samples.txt`file. 
