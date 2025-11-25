@@ -5,7 +5,7 @@ This section describes the workflow to infer patterns of species divergence usin
 
 ### Workflow components
 - [1. Directory structure, data format and tools](./01_dataformat_and_tools/)
-- [2. Clean data](./02_data_cleaning/)
+- [2. Clean reads](./02_data_cleaning/)
 - [3. Map reads](./03_read_mapping)
 - [4. Calling Single Nucleotide Variants (SNPs)](./04_SNP_calling)
 - [5. Filter SNPs](./05_SNP_filtering)
