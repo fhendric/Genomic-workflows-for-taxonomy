@@ -6,7 +6,7 @@ This section describes the workflow to infer patterns of species divergence usin
 ## Setting the directory structure
 
 Before we start, it’s most convenient to set up an organized directory structure to store different datatypes. Using the command 
-mkdir <foldername> 
+<pre> '''bash mkdir <foldername>''' <pre> 
 the following directories could be created in your project working directory:
 astral		stores the consensus trees produced by astral
 bam 		stores the alignment files in BAM format
