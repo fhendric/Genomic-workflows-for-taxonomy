@@ -38,8 +38,7 @@ Before we start, it is most convenient to set up an organized directory structur
 
 The standard data format produced by Illumina or DNB sequencing platforms consists of a **pair of FASTQ files** for each sample, typically distinguished by a “1” and “2” in their filenames. These two files contain the **forward** and **reverse** sequencing reads of the same DNA fragments.  
 
-Importantly, the order of reads is preserved between the two files:  
-the *n*-th record in the R1 file corresponds to the *n*-th record in the R2 file, representing the two ends of the same DNA fragment.
+Importantly, the order of reads is preserved between the two files: the *n*-th record in the R1 file corresponds to the *n*-th record in the R2 file, representing the two ends of the same DNA fragment.
 
 Each sequencing read in FASTQ format is represented by **four lines**:
 
@@ -72,7 +71,7 @@ FFFFFFEFCEEGEFEDFF@FDFFFFF?FEFEFFFFFF<BFFFDFFFFF8GFFFFFFDF6;EFFFFF=F;GFEFAFFF9FF
 
 ### Genome (fasta) 
 
-The genome sequence generally comes in regular fasta format with each genomic sequence (contig, scaffold or chromosome) coming in two lines. The first line, starting with “>”, gives the name of the sequence, while the second line gives the actual nucleotide sequence.  
+The genome sequence, stored in the ´./genome` directory, generally comes in regular fasta format with each genomic sequence (contig, scaffold or chromosome) coming in two lines. The first line, starting with “>”, gives the name of the sequence, while the second line gives the actual nucleotide sequence.  
 
 ### Samples
 
