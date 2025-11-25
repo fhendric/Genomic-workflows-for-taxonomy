@@ -39,22 +39,22 @@ Before we start, it is most convenient to set up an organized directory structur
 
 ## Input data formats
 
-The standard data format of Illumina or DNB sequencing conducted at a sequencing facility is a pair of fastq files for each sequenced sample, often denoted with a “1” and “2” in the filenames. These two files contain the forward and reverse sequencing read of the sequenced DNA fragments. The order of the reads is identical in the two files, wherein the n’th sequence in the first and second fastq file correspond to the forward and reverse sequencing read of the same DNA fragment. In the fastq format, each sequencing read is represented by four lines. The first line gives the name (@ID) of the sequencing read, the second line shows the actual nucleotide sequence, the third line gives a ‘+’ and the fourth line a quality score of each nucleotide. These quality scores are ASCII coded Phred scores and represent the probability that a base was incorrectly called (se  https://en.wikipedia.org/wiki/Phred_quality_score)
+The standard data format of Illumina or DNB sequencing conducted at a sequencing facility is a pair of fastq files for each sequenced sample, often denoted with a “1” and “2” in the filenames. These two files contain the forward and reverse sequencing reads of the sequenced DNA fragments. The order of the reads is identical in the two files, wherein the n’th sequence in the first and second fastq file corresponds to the forward and reverse sequencing read of the same DNA fragment. In the fastq format, each sequencing read is represented by four lines. The first line gives the name (@ID) of the sequencing read, the second line shows the actual nucleotide sequence, the third line gives a ‘+’ and the fourth line a quality score of each nucleotide. These quality scores are ASCII coded Phred scores and represent the probability that a base was incorrectly called (se  https://en.wikipedia.org/wiki/Phred_quality_score)
 Forward (sampleID_1.fq.gz) file:
 
 ### Resequencing data (fastq) 
 
-`@E250063195L1C001R00300000730/1
+```@E250063195L1C001R00300000730/1
 ATGTCAGATAAATTACTGGTTCCTAAGTTACGAATTAGCTAACCTACTTTTTTCACGTGTTAAAATACAACAATAACATTCATGTACTGCCATTTGCGTCGACCGGCAACGCTAATGTCC
 +
-FE@EFFFE8FFBE;EFFFFD:FFEF:FEEFFFFEEBFBCFFCEFCFCFCF4EFFFFFFFEFFF>FAFFFFFFBDFFFFFCEFEFDFFFFFFFF:BFFFEFEEFFF=F@FFFF>EFCFCFF`
+FE@EFFFE8FFBE;EFFFFD:FFEF:FEEFFFFEEBFBCFFCEFCFCFCF4EFFFFFFFEFFF>FAFFFFFFBDFFFFFCEFEFDFFFFFFFF:BFFFEFEEFFF=F@FFFF>EFCFCFF```
 
 Reverse (sampleID_2.fq.gz) file:
 
-`@E250063195L1C001R00300000730/2
+```@E250063195L1C001R00300000730/2
 ATACCAGAAGACGGTCAGTGTCGATATTAAAACCTCTTCTGCCCATCCTATCACGTGATTTGACAGTATAACGGACATTAGCGTTGCCGGTCGACGCAAATGGCAGTACATGAATGTTAT
 +
-FFFFFFEFCEEGEFEDFF@FDFFFFF?FEFEFFFFFF<BFFFDFFFFF8GFFFFFFDF6;EFFFFF=F;GFEFAFFF9FFFFFFBGFGEFFFEFFFFFF2AGFFFF9GFF%GFF6E(;F?`
+FFFFFFEFCEEGEFEDFF@FDFFFFF?FEFEFFFFFF<BFFFDFFFFF8GFFFFFFDF6;EFFFFF=F;GFEFAFFF9FFFFFFBGFGEFFFEFFFFFF2AGFFFF9GFF%GFF6E(;F?```
 
 For subsequent analyses, it is recommended to use the sampleID as basename of the fastq files and should match the sampleID’s in the “samples.txt” file.  
 
