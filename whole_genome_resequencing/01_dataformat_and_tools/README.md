@@ -34,6 +34,8 @@ Before we start, it is most convenient to set up an organized directory structur
 
 ## Input data formats
 
+### Sequencing reads
+
 The standard data format produced by Illumina or DNB sequencing platforms consists of a **pair of FASTQ files** for each sample, typically distinguished by a “1” and “2” in their filenames. These two files contain the **forward** and **reverse** sequencing reads of the same DNA fragments.  
 
 Importantly, the order of reads is preserved between the two files:  
