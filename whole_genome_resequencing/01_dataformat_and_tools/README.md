@@ -48,8 +48,7 @@ Each sequencing read in FASTQ format is represented by **four lines**:
 
 Phred scores reflect the probability that a base call is incorrect (see [Phred quality score](https://en.wikipedia.org/wiki/Phred_quality_score)).
 
----
-### Example FASTQ entries
+Here are some example FASTQ entries
 
 **Forward read** (`sampleID_1.fq.gz`)
 
@@ -60,7 +59,7 @@ ATGTCAGATAAATTACTGGTTCCTAAGTTACGAATTAGCTAACCTACTTTTTTCACGTGTTAAAATACAACAATAACATT
 FE@EFFFE8FFBE;EFFFFD:FFEF:FEEFFFFEEBFBCFFCEFCFCFCF4EFFFFFFFEFFF>FAFFFFFFBDFFFFFCEFEFDFFFFFFFF:BFFFEFEEFFF=F@FFFF>EFCFCFF
 ```
 
-**Reverse read** ('sampleID_2.fq.gz'):
+**Reverse read** (`sampleID_2.fq.gz`):
 
 ```text
 @E250063195L1C001R00300000730/2
