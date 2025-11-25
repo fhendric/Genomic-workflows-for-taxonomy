@@ -68,7 +68,7 @@ samtools index “$BAM_OUT”
 
 ### 3. Remove PCR duplicates
 
-Before calling single nucleotide polymorphisms (SNPs) a last preprocessing step is required being removal of PCR duplicates. During library preparation, PCR amplification can generate multiple reads from the same original DNA fragment. These are not independent observations and may bias variant calling, so only one copy should be retained. PCR duplicates can be identified when both reads in a pair have the same alignment start positions. They can be removed using **picard’s MarkDuplicates** tool (https://broadinstitute.github.io/picard/):
+Before calling single nucleotide polymorphisms (SNPs) a last preprocessing step is required being removal of PCR duplicates. During library preparation, PCR amplification can generate multiple reads from the same original DNA fragment. These are not independent observations and may bias variant calling, so only one copy should be retained. PCR duplicates can be identified when both reads in a pair have the same alignment start positions. They can be removed using **picard’s MarkDuplicates** tool (https://broadinstitute.github.io/picard/) using the following script:
 
 ```bash
 java -Xmx8G -jar picard-tools-2.9.0/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true VALIDATION_STRINGENCY=SILENT INPUT=$BAM_IN OUTPUT=$BAM_RMD_OUT METRICS_FILE=$BAM_RMD_METRICS
@@ -93,7 +93,3 @@ BAM_RMD_METRICS="./bam/${SAMPLE}.metrics.rmd.txt"
 
 java -Xmx8G -jar picard-tools-2.9.0/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true VALIDATION_STRINGENCY=SILENT INPUT=$BAM_IN OUTPUT=$BAM_RMD_OUT METRICS_FILE=$BAM_RMD_METRICS
 ```
-
-
-Adding read group metadata is important for downstream tools especially when working with multiple samples. 
-
