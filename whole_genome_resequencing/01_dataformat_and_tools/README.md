@@ -29,8 +29,8 @@ Before we start, it is most convenient to set up an organized directory structur
 | IQTREE    | Maximum likelihood tree analysis (https://iqtree.github.io/) |
 | PICARD    | Manipulating BAM/SAM files (https://github.com/broadinstitute/picard) |
 | SAMTOOLS  | Suite of programs for interacting with high-throughput sequencing data (https://www.htslib.org/) |
-| R packages| ape (Analysis of Phylogenetics and Evolution): functions for analysis of DNA sequences and phylogenetic trees (https://cran.r-project.org/web/packages/ape/index.html)|
-|           | phangorn (Phylogenetic Reconstruction and Analysis): Estimation of phylogenetic trees and networks (https://cran.r-project.org/web/packages/phangorn/index.html) |
+| R packages| *ape* (Analysis of Phylogenetics and Evolution): functions for analysis of DNA sequences and phylogenetic trees (https://cran.r-project.org/web/packages/ape/index.html)|
+|           | *phangorn* (Phylogenetic Reconstruction and Analysis): Estimation of phylogenetic trees and networks (https://cran.r-project.org/web/packages/phangorn/index.html) |
 
 ## Input data formats
 
