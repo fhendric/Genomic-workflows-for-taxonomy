@@ -6,7 +6,7 @@ SNP calling with bcftools is a two-step process:
 1.	Counting reads supporting each allele at variable positions.
 2.	Inferring genotypes using likelihood-based methods.
 
-The output is a standardized Variant Call Format (VCF) file, which stores the detected variants and genotypes as well as information on the read depth and quality of the genotypes. 
+The output is a standardized **Variant Call Format (VCF)** file, which stores the detected variants and genotypes as well as information on the read depth and quality of the genotypes. 
 Given a set of BAM files, we will use the following bcftools command to perform SNP calling and to generate a compressed VCF (=BCF) file:
 
 ```bash
