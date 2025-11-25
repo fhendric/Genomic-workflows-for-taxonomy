@@ -86,10 +86,13 @@ cd ~/project
 # Read sample name from file based on array task ID
 SAMPLE=$(sed -n "${PBS_ARRAYID}p" ./samples/samples.txt)
 
-echo "Processing sample ${SAMPLE}"
+# Define input and output files
 BAM_IN="./bam/${SAMPLE}.bam"
 BAM_RMD_OUT="./bam/${SAMPLE}.rmd.bam"
 BAM_RMD_METRICS="./bam/${SAMPLE}.metrics.rmd.txt"
 
+echo "Processing sample ${SAMPLE}"
+
+# Run Picard's MarkDuplicates tool
 java -Xmx8G -jar picard-tools-2.9.0/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true VALIDATION_STRINGENCY=SILENT INPUT=$BAM_IN OUTPUT=$BAM_RMD_OUT METRICS_FILE=$BAM_RMD_METRICS
 ```
