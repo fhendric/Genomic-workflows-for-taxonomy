@@ -5,8 +5,8 @@ This section describes the workflow to infer patterns of species divergence usin
 
 ## Setting the directory structure
 
-Before we start, it’s most convenient to set up an organized directory structure to store different datatypes. Using the command 
-<pre> 'bash mkdir <foldername>' <pre> the following directories could be created in your project working directory:
+Before we start, it’s most convenient to set up an organized directory structure to store different datatypes. Using the bash command 
+'mkdir <foldername>' the following directories could be created in your project working directory:
 astral		stores the consensus trees produced by astral
 bam 		stores the alignment files in BAM format
 bed	stores the BED files, being files that list genomic intervals such as predefined genomic windows, proteins, Ultra-Conserved Elements [UCE], etc.. for which trees will be constructed
