@@ -12,7 +12,7 @@ Before we start, it is most convenient to set up an organized directory structur
 | `consensus`    | Stores the diploid consensus genome sequence for each individual. |
 | `genome`       | Stores the reference genome sequence in FASTA format. |
 | `reads`        | Stores the raw sequencing reads in `fastq.gz` format. |
-| `samples`      | Contains a file `samples.txt` listing all sample names (individual IDs). These names should match the basenames of the files in both the `reads` and `bam` directories. |
+| `samples`      | Contains a file `samples.txt` listing all sample names (individual IDs). These names should match the basenames of the files in both the `reads` (or `clean` directories. |
 | `scripts`      | Stores your custom scripts used in the workflow. |
 | `trees`        | Stores phylogenetic trees inferred for each genomic window. |
 | `vcf`          | Stores Variant Call Format (VCF) files containing SNP and other variant information for all individuals. |
