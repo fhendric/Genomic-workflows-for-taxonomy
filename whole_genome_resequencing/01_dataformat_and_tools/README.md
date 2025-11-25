@@ -8,7 +8,7 @@ Before we start, it is most convenient to set up an organized directory structur
 | `astral`       | Stores the consensus trees produced by ASTRAL. |
 | `bam`          | Stores the alignment files in BAM format. |
 | `bed`          | Stores BED files containing genomic intervals such as predefined windows, proteins, Ultra-Conserved Elements (UCEs), etc., for which phylogenetic trees will be constructed. |
-| `cleaned`      | Stores cleaned reads (after adapter trimming and quality filtering), if preprocessing is performed. |
+| `clean`      | Stores cleaned reads (after adapter trimming and quality filtering), if preprocessing is performed. |
 | `consensus`    | Stores the diploid consensus genome sequence for each individual. |
 | `genome`       | Stores the reference genome sequence in FASTA format. |
 | `reads`        | Stores the raw sequencing reads in `fastq.gz` format. |
