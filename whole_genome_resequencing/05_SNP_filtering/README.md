@@ -9,10 +9,10 @@ For applications such as generating aligned genomic consensus sequences (e.g., f
 Indels are particularly problematic in this context because they alter the coordinate space of the alignment, potentially creating frameshifts or misalignments across samples. To avoid this, we remove indels and MNPs using the `-V` flag with **bcftools view**, which allows us to exclude specified variant types. Importantly, this filtering step retains invariant (non-polymorphic) sites, which are required to reconstruct the full consensus sequence for each indivdiual. We also set called genotypes that are based on a low sequencing depth (e.g. a sequencing depth of at least 5 = `DP<5`) as missing (`./.`) to avoid that read errors are called as SNPs. Setting the individual genotypes is done in the second part of the command through the `+setGT` plugin. 
 
 ```bash
-VCF_IN="./vcf/project.raw.vcf.gz"
-VCF_OUT_NOINDEL="./vcf/project.noindel.minDP5.vcf.gz"
-bcftools view -V indels,mnps "$VCF_IN" -Ou | bcftools +setGT -Oz -o "$VCF_OUT_NOINDEL" -- -t q -n . -i 'FMT/DP<5'
-tabix -p vcf "$VCF_OUT_NOINDEL"
+VCF_RAW="./vcf/project.raw.vcf.gz"
+VCF_NOINDEL="./vcf/project.noindel.minDP5.vcf.gz"
+bcftools view -V indels,mnps "$VCF_RAW" -Ou | bcftools +setGT -Oz -o "$VCF_NOINDEL" -- -t q -n . -i 'FMT/DP<5'
+tabix -p vcf "$VCF_NOINDEL"
 ```
 
 ### 2. VCF with SNPs only
@@ -21,10 +21,10 @@ The raw VCF is typically very large because it includes all genomic positions, m
 To extract only SNPs, we use the `-v` snps option with **bcftools view**, which retains polymorphic sites of the specified type. Unlike the previous command where we used `-V` (uppercase) to exclude variant types, the lowercase `-v` explicitly includes only the types we want, in this case, SNPs.
 
 ```bash
-VCF_IN="./vcf/project.raw.vcf.gz"
-VCF_OUT_SNPS="./vcf/project.snps.vcf.gz"
-bcftools view -v snps -Oz -o "$VCF_OUT_SNPS" "$VCF_IN"
-tabix -p vcf "$VCF_OUT_SNPS"
+VCF_RAW="./vcf/project.raw.vcf.gz"
+VCF_SNPS="./vcf/project.snps.vcf.gz"
+bcftools view -v snps -Oz -o "$VCF_SNPS" "$VCF_RAW"
+tabix -p vcf "$VCF_SNPS"
 ```
 
 ### 3. VCF with high quality genotypes in all individuals
@@ -38,9 +38,9 @@ First, we use **bcftools view** to keep only SNPs that are biallelic, using the 
 Since this filtering is applied only to SNPs, we can use the VCF file `project.snps.vcf.gz` generated in the previous step as input.
 
 ```bash
-VCF_OUT_SNPS="./vcf/project.snps.vcf.gz"
-VCF_OUT_STRINGENT="./vcf/project.stringent.vcf.gz"
-bcftools view -m2 -M2 -v snps "$VCF_OUT_SNPS" | bcftools filter -i 'MIN(GQ)>=30 && MAF>=0.01 && MAF<=0.99 && F_MISSING=0' -Oz -o "$VCF_OUT_STRINGENT"
-tabix -p vcf "$VCF_OUT_STRINGENT"
+VCF_SNPS="./vcf/project.snps.vcf.gz"
+VCF_STRINGENT="./vcf/project.stringent.vcf.gz"
+bcftools view -m2 -M2 -v snps "$VCF_SNPS" | bcftools filter -i 'MIN(GQ)>=30 && MAF>=0.01 && MAF<=0.99 && F_MISSING=0' -Oz -o "$VCF_STRINGENT"
+tabix -p vcf "$VCF_STRINGENT"
 ``` 
 
