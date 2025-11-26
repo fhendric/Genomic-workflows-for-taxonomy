@@ -98,5 +98,5 @@ BAM_RMD_METRICS="./bam/${SAMPLE}.metrics.rmd.txt"
 java -Xmx8G -jar picard-tools-2.9.0/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true VALIDATION_STRINGENCY=SILENT INPUT="$BAM_IN" OUTPUT="$BAM_RMD_OUT" METRICS_FILE="$BAM_RMD_METRICS"
 
 # Index the new duplicate-removed bam files
-samtools index “$BAM_RMD_OUT”
+samtools index "$BAM_RMD_OUT"
 ```
