@@ -19,6 +19,6 @@ This output is then piped into `bcftools call`, which performs the actual varian
 We finally index the compressed VCF for fast querying in downstream applications with the **tabix** tool that is included in **bcftools**. 
 
 ```bash
-tabix -p vcf "$VCF_RAW
+tabix -p vcf "$VCF_RAW"
 ```
 
