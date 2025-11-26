@@ -74,7 +74,7 @@ Before calling single nucleotide polymorphisms (SNPs) a last preprocessing step 
 java -Xmx8G -jar picard-tools-2.9.0/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true VALIDATION_STRINGENCY=SILENT INPUT="$BAM_IN" OUTPUT="$BAM_RMD_OUT" METRICS_FILE="$BAM_RMD_METRICS"
 ```
 
-This command removes duplicate reads from `$BAM_IN` (e.g., sampleID.bam) and writes the cleaned output to `$BAM_RMD_OUT` (e.g. `sampleID.rmd.bam`). It also produces a metrics file (`$BAM_RMD_METRICS`, e.g., `sampleID.rmd.metrics.txt`) reporting the proportion of duplicates found. To save space, the original bam files can be removed.
+This command removes duplicate reads from `$BAM_IN` (e.g., sampleID.bam) and writes the cleaned output to `$BAM_RMD_OUT` (e.g. `sampleID.rmd.bam`). It also produces a metrics file (`$BAM_RMD_METRICS`, e.g., `sampleID.rmd.metrics.txt`) reporting the proportion of duplicates found. Once completed, we again index the new duplicate-removed bam files as before `samtools index “$BAM_RMD_OUT”`. To save space, the original bam files can be removed. 
 
 If you want to run this in parallel on a cluster, the following example script (picard_rmd.sh) can be used:
 
@@ -82,6 +82,9 @@ If you want to run this in parallel on a cluster, the following example script (
 #!/bin/bash
 
 cd ~/project
+
+# Load modules
+module load SAMtools
 
 # Read sample name from file based on array task ID
 SAMPLE=$(sed -n "${PBS_ARRAYID}p" ./samples/samples.txt)
@@ -93,4 +96,7 @@ BAM_RMD_METRICS="./bam/${SAMPLE}.metrics.rmd.txt"
 
 # Run Picard's MarkDuplicates tool
 java -Xmx8G -jar picard-tools-2.9.0/picard.jar MarkDuplicates REMOVE_DUPLICATES=true ASSUME_SORTED=true VALIDATION_STRINGENCY=SILENT INPUT="$BAM_IN" OUTPUT="$BAM_RMD_OUT" METRICS_FILE="$BAM_RMD_METRICS"
+
+# Index the new duplicate-removed bam files
+samtools index “$BAM_RMD_OUT”
 ```
