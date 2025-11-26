@@ -12,9 +12,9 @@ To define which regions you want to extract, you first need a BED file. A BED fi
 > 
 > If you want to generate regions of fixed size (e.g., 10 kb windows) at fixed intervals (e.g., every 100 kb), you can use the **makewindows** tool from **bedtools**.
 > With **makewindows**, you provide:
-> - The reference genome index file (*.fai) created earlier with SAMtools (-g)
-> - The desired window size (-w)
-> - The step size (-s)
+> - The reference genome index file (`*.fai`) created earlier with SAMtools (`-g`)
+> - The desired window size (`-w`)
+> - The step size (`-s`)
 > The BED file can then be generated with the following command:
 > ```bash
 >
