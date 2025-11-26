@@ -1,6 +1,6 @@
 ## Generating multifasta files for genomic windows
 
-The consensus sequences generated in the previous step can now be combined into **multifasta** files. A multifasta file is simply a FASTA file that contains the consensus sequences of multiple individuals for the same genomic regions, and or often used as input files for phylogenetic anayses. These regions can be consecutive genomic windows, coding regions, etc.... Creating these multifasta files is a two-step process wherein we first make a BED file that lists the genomic windows, and then generate the multifasta for each window.
+The consensus sequences generated in the previous step can now be combined into **multifasta** files. A multifasta file is simply a FASTA file that contains the consensus sequences of multiple individuals for the same genomic region, and are generally used as input files for phylogenetic anayses. These regions can be consecutive genomic windows, coding regions, etc.... Creating these multifasta files is a two-step process wherein we first make a **BED** file that lists the genomic windows, and then generate the multifasta for each window.
 
 ### Step 1: Create a BED file
 To define which regions you want to extract, you first need a BED file. A BED file is a plain text file with three columns:
