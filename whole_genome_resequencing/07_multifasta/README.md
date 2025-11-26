@@ -65,5 +65,6 @@ while read chrom start end; do
         	echo "$seq_only" >> "$out"
 	done
 done < $BED
+
 echo "Multi-FASTA generation completed.”
 ```
