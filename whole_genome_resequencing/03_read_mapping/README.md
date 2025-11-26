@@ -3,7 +3,6 @@
 To gain meaningful insights from sequencing data, we first need to determine where each read originates from in the genome. This process is called **mapping** or **alignment**, where sequencing reads are matched to a reference genome. There are many mapping tools available, often tailored for specific data types - for example, STAR or HISAT for RNA-seq, minimap2 for long reads, miniprot for protein sequences.   
 In this guide, we’ll use **BWA-MEM**, a widely used algorithm within the BWA software suite, to align paired-end reads to a reference genome.
 
----
 
 ### 1. Index the Reference Genome
 
