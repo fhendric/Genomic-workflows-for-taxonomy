@@ -8,7 +8,8 @@ To define which regions you want to extract, you first need a BED file. A BED fi
 2.	Start position (starting from 0!)
 3.	End position
 
-> [!TIP]   Automatically generate BED windows
+> [!TIP]
+> Automatically generate BED windows
 > 
 > If you want to generate regions of fixed size (e.g., 10 kb windows) at fixed intervals (e.g., every 100 kb), you can use the **makewindows** tool from **bedtools**.
 > With **makewindows**, you provide:
