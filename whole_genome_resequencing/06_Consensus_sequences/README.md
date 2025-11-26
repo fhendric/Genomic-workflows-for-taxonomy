@@ -34,5 +34,3 @@ bcftools consensus --fasta-ref "$REF" --missing N --samples "$SAMPLE"  -o "$OUT_
 # Index consensus FASTA
 samtools faidx "$OUT_DIR/${SAMPLE}.fa"
 ```
-echo “ Consensus sequence generated for sample: $SAMPLE"
-
