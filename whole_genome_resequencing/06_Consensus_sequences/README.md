@@ -20,16 +20,20 @@ If you want to run the individual analyses in parallel on a cluster, you can use
 
 cd ~/project
 
+# Load modules
+module load BCFtools
+module load SAMtools
+
 # Read sample name from file based on array task ID
 SAMPLE=$(sed -n "${PBS_ARRAYID}p" ./samples/samples.txt)
 
 # Input files
 VCF_NOINDEL="./vcf/project.noindel.minDP5.vcf.gz" 
-REF="./genome/refgenome.fasta"
+GENOME="./genome/refgenome.fasta"
 OUT_DIR="./consensus"
 
 # Generate consensus sequence
-bcftools consensus --fasta-ref "$REF" --missing N --samples "$SAMPLE"  -o "$OUT_DIR/${SAMPLE}.fa" "$VCF_NOINDEL"
+bcftools consensus --fasta-ref "$GENOME" --missing N --samples "$SAMPLE"  -o "$OUT_DIR/${SAMPLE}.fa" "$VCF_NOINDEL"
 
 # Index consensus FASTA
 samtools faidx "$OUT_DIR/${SAMPLE}.fa"
