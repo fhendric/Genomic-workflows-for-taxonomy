@@ -10,7 +10,7 @@ The output is a standardized **Variant Call Format (VCF)** file, which stores th
 Given a set of BAM files, we will use the following bcftools command to perform SNP calling and to generate a compressed VCF (=BCF) file:
 
 ```bash
-bcftools mpileup --min-MQ 30 -a AD,DP,SP -Ou -f $GENOME sample01.bam sample02.bam sample03.bam ... | bcftools call -f GQ,GP -m -Oz -o ./vcf/project.raw.vcf.gz 
+bcftools mpileup --min-MQ 30 -a AD,DP,SP -Ou -f "$GENOME" sample01.bam sample02.bam sample03.bam ... | bcftools call -f GQ,GP -m -Oz -o ./vcf/project.raw.vcf.gz 
 ```
 
 The first part of the command, `bcftools mpileup`, generates the allelic count data for each individual. The `-f` flag specifies the reference genome, while `-a AD,DP,SP` adds annotations for allele depths (`AD`), total read depth (`DP`), and strand bias (`SP`) to the output. We also want to avoid SNPs to be called from reads that map ambiguously and filtering them out by `–min-MQ 30` (minimum read mapping quality > 30). The `-Ou` flag outputs an uncompressed VCF to standard output. The BAM files are listed at the end.
