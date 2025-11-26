@@ -3,7 +3,7 @@
 The VCF file generated in the previous step contains genotype information for all genomic positions, including both variable (polymorphic) and invariant sites, as well as genotype calls made with low quality. While this raw VCF (hence the proposed filename extension `.raw.vcf.gz` ) is useful as a starting point, this unfiltered VCF is generally not suitable for most downstream analyses, which typically require only high-confidence, polymorphic sites.
 Filtering a VCF file is a critical step that can greatly influence analytical results, especially in population genomics, phylogenetics, or variant association studies. Care must be taken when applying filters to avoid excluding important variants or retaining low-quality data. In the following sections, we will generate three different VCF files from the raw input using **bcftools**, each filtered for a specific goal or application. 
 
-## 1. VCF without indels
+### 1. VCF without indels
 
 For applications such as generating aligned genomic consensus sequences (e.g., for phylogenetic inference), we need a VCF that retains all positions, including invariant sites, but excludes variants that disrupt sequence alignment — specifically insertions and deletions (indels) and multi-nucleotide polymorphisms (MNPs).
 Indels are particularly problematic in this context because they alter the coordinate space of the alignment, potentially creating frameshifts or misalignments across samples. To avoid this, we remove indels and MNPs using the `-V` flag with bcftools view, which allows us to exclude specified variant types. Importantly, this filtering step retains invariant (non-polymorphic) sites, which are required to reconstruct the full consensus sequence for each indivdiual. We also set called genotypes that are based on a low sequencing depth (e.g. a sequencing depth of at least 5 = `DP<5`) as missing (`./.`) to avoid that read errors are called as SNPs. Setting the individual genotypes is done in the second part of the command through the `+setGT` plugin. 
@@ -15,7 +15,7 @@ bcftools view -V indels,mnps "$VCF_IN" -Ou | bcftools +setGT -Oz -o "$VCF_OUT_NO
 tabix -p vcf "$VCF_OUT_NOINDEL"
 ```
 
-## 2. VCF with SNPs only
+### 2. VCF with SNPs only
 
 The raw VCF is typically very large because it includes all genomic positions, most of which are invariant. For many analyses, such as population structure, diversity metrics, or genome-wide association studies, we are only interested in variable positions, specifically single nucleotide polymorphisms (SNPs).
 To extract only SNPs, we use the `-v` snps option with bcftools view, which retains polymorphic sites of the specified type. Unlike the previous command where we used `-V` (uppercase) to exclude variant types, the lowercase `-v` explicitly includes only the types we want, in this case, SNPs.
@@ -27,7 +27,7 @@ bcftools view -v snps -Oz -o "$VCF_OUT_SNPS" "$VCF_IN"
 tabix -p vcf "$VCF_OUT_SNPS"
 ```
 
-## 3. VCF with high quality genotypes in all individuals
+### 3. VCF with high quality genotypes in all individuals
 
 In the final step, we generate a highly accurate VCF that retains only biallelic SNPs with high-quality genotypes and no missing data across all individuals. This kind of stringent filtering is useful when performing analyses that are sensitive to genotyping error or missingness. The filtering involves two stages:
 First, we use bcftools view to keep only SNPs that are biallelic, using the flags `-m2` and `-M2` to specify a minimum and maximum of two alleles per site. Next, we pipe the result into bcftools filter, applying several quality thresholds:
