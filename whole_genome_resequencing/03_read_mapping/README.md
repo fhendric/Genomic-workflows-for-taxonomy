@@ -36,7 +36,7 @@ Let's break down the command. The first part, `bwa mem "$GENOME" "$READ1" "$READ
 Adding read group metadata is important for downstream tools especially when working with multiple samples. 
 
 Finally, since most downstream tools require BAM files sorted by genomic position, we sort the output using **samtools sort** and save it as the final BAM file with `-o "$BAM_OUT"`. It's best to name the output file using the individual's ID, matching entries in the `samples.txt` file. 
-Once the mapping is completed, an index file is created (**samtools index**) to enable fast and efficient access to specific regions within the BAM without reading the entire file using the command `samtools index “$BAM_OUT”`
+Once the mapping is completed, an index file is created (**samtools index**) to enable fast and efficient access to specific regions within the BAM without reading the entire file using the command `samtools index "$BAM_OUT"`
 
 While mapping can be done sequentially for each individual, it is more efficient on a computing cluster to run mappings in parallel. The mapping and sample processing commands are then specified in a script that is submitted to the cluster. The following script (mapping.sh) automates this by reading paired fastq.gz files from the file samples.txt, mapping them, and outputting sorted BAM files named after each sample ID.
 
