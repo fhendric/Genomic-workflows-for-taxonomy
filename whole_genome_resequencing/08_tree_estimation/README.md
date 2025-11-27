@@ -36,6 +36,6 @@ echo "Finished analyzing: $FASTA"
 
 Each IQ-TREE run generates several output files. The most important is the .treefile, which contains the inferred maximum likelihood (ML) tree. To combine all resulting trees into a single file, use:
 ```bash
-cd trees
+cd ./trees
 cat *.treefile > project.trees 
 ```
