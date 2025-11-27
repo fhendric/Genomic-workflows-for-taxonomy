@@ -12,7 +12,7 @@ This section describes the workflow to infer patterns of species divergence usin
 - [6. Generate genomic consensus sequence for each individual](./06_consensus_sequences)
 - [7. Generate multifasta files for predefined genomic regions](./07_multifasta)
 - [8. Generate trees per region](./08_tree_estimation)
-- [9. Combine trees and obtain consensus tree](./09_densi_and_consensus_tree)
+- [9. Combine trees and make consensus tree](./09_densi_and_consensus_tree)
 
 ![Workflow components](./images/Visualisation_workflow.svg)
 
