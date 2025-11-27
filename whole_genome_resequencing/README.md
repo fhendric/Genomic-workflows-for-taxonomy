@@ -9,6 +9,8 @@ This section describes the workflow to infer patterns of species divergence usin
 - [3. Map reads](./03_read_mapping)
 - [4. Calling Single Nucleotide Variants (SNPs)](./04_SNP_calling)
 - [5. Filter SNPs](./05_SNP_filtering)
+- [6. Generate genomic consensus sequence for each individual](./06_consensus_sequences)
+- [7. Generate multifasta files for genomic regions or windows](./07_multifasta)
 
 
 > [!TIP]
