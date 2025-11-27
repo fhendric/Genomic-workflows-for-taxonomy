@@ -18,7 +18,7 @@ To define which regions you want to extract, you first need a BED file. A BED fi
 > The BED file can then be generated with the following command:
 > ```bash
 >
-> module load BEDtools
+> module load BEDTools
 > 
 > GENOME="./genome/refgenome.fasta"
 > BED = “./bed/windows.bed”
@@ -29,41 +29,48 @@ To define which regions you want to extract, you first need a BED file. A BED fi
 Once the BED file is ready, we can extract the sequences. The bash script below will create multifasta files for each defined window. Note that the script also includes the generation of the BED file (Step1) and this step should be silenced if you already have a BED file available. 
 
 ```bash
-# Set input files
+# Load modules
 
-GENOME ="./genome/refgenome.fasta"
-CONSENSUS="./consensus"
-BED = “./bed/windows.bed”
-OUTPUT_DIR="./multifasta "
+module load BEDTools
+module load SAMtools
+
+# Set input files and directories
+
+CONSENSUS_DIR="./consensus"
+MULTIFASTA_DIR="./multifasta"
+GENOME="./genome/refgenome.fasta"
+BED="./bed/windows.bed"
 WINDOW_SIZE=10000
 STEP_SIZE=100000
 
 # Generate windows [optional if not generated before]
 
-bedtools makewindows -g $GENOME.fai -w $WINDOW_SIZE -s $STEP_SIZE >  $BED
-echo "Processing windows..."
+bedtools makewindows -g "${GENOME}.fai" -w $WINDOW_SIZE -s $STEP_SIZE >  $BED
+
 
 # Loop through each window and append sequences to multifasta
 
+echo "Processing windows..."
+
 while read chrom start end; do
-   	win_id="${chrom}_${start}_${end}"
-    	out="${OUTPUT_DIR}/${win_id}.fa"
+        win_id="${chrom}_${start}_${end}"
+        out="${MULTIFASTA_DIR}/${win_id}.fa"
 
-    	# Initialize empty FASTA
-    	> "$out"
+        # Initialize empty FASTA
+        > "$out"
 
-    	for fasta in $CONSENSUS/*.fa; do
-        	sample_name=$(basename "$fasta" .fa)
+        for fasta in "${CONSENSUS_DIR}"/*.fa; do
+                sample_name=$(basename "$fasta" .fa)
 
-        	start1=$((start + 1))
-        	seq=$(samtools faidx "$fasta" "${chrom}:${start1}-${end}")  # +1 to convert BED to 1-based
-        	# Strip header and collapse sequence into one line
-        	seq_only=$(echo "$seq" | tail -n +2 | tr -d '\n')
+                start1=$((start + 1))
+                seq=$(samtools faidx "$fasta" "${chrom}:${start1}-${end}")  # +1 to convert BED to 1-based
+                # Strip header and collapse sequence into one line
+                seq_only=$(echo "$seq" | tail -n +2 | tr -d '\n')
 
-        	echo ">$sample_name" >> "$out"
-        	echo "$seq_only" >> "$out"
-	done
+                echo ">$sample_name" >> "$out"
+                echo "$seq_only" >> "$out"
+        done
 done < $BED
 
-echo "Multi-FASTA generation completed.”
+echo "Multi-FASTA generation completed."
 ```
