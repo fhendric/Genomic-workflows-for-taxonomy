@@ -10,11 +10,13 @@ This section describes the workflow to infer patterns of species divergence usin
 - [4. Calling Single Nucleotide Variants (SNPs)](./04_SNP_calling)
 - [5. Filter SNPs](./05_SNP_filtering)
 - [6. Generate genomic consensus sequence for each individual](./06_consensus_sequences)
-- [7. Generate multifasta files for genomic regions or windows](./07_multifasta)
+- [7. Generate multifasta files for predefined genomic regions](./07_multifasta)
+- [8. Generate trees per region](./08_tree_estimation)
+- [9. DensiTree end consensus tree]
 
 ![Workflow components](./images/Visualisation_workflow.svg)
 
 > [!TIP]
-> Steps 2–5 are the most **computationally demanding** components of the workflow and typically need to be executed on a high-performance computing (HPC) cluster. Running these steps therefore requires not only access to such infrastructure, but also practical experience with cluster environments (e.g., job submission, resource allocation, queue systems). Since this expertise is not always available, these initial steps have been bundled into an integrated workflow called **GenTax**, which is available on the **European Galaxy server** (https://usegalaxy.eu). The Galaxy platform is a widely used, open-source, web-based environment that enables users to run bioinformatics analyses without command-line knowledge. With GenTax, you can simply upload your raw FASTQ files and the reference genome; the workflow then automatically performs Steps 2–5 and produces all required output files, including the variant (SNP) data needed for downstream analyses.
+> Steps 2–5 are the most **computationally demanding** components of the workflow and typically need to be executed on a high-performance computing (HPC) cluster. Running these steps therefore requires not only access to such infrastructure, but also practical experience with cluster environments (e.g., job submission, resource allocation, queue systems). Since this expertise is not always available, these initial steps have been bundled into an integrated workflow called **GenTax** available on the **European Galaxy server** (https://usegalaxy.eu). The Galaxy platform is a widely used, open-source, web-based environment that enables users to run bioinformatics analyses without command-line knowledge. With GenTax, you can simply upload your raw FASTQ files and the reference genome; the workflow then automatically performs Steps 2–5 and produces all required output files, including the variant (SNP) data needed for downstream analyses.
 >
 > More information and a user manual for running the GenTax workflow can be found here: *[link to be inserted]*.
