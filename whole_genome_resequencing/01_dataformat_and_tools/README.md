@@ -1,6 +1,6 @@
 ## Set-up the directory structure
 
-Before we start, it is most convenient to set up an organized directory structure to store the different datatypes used throughout this workflow. Using the bash command `mkdir <foldername>`, you can create the following directories in your main working directory which we refer to as `project`.:
+Before we start, it is most convenient to set up an organized directory structure to store the different datatypes used throughout this workflow. Using the bash command `mkdir <foldername>`, you can create the following directories in your main working directory, which we refer to as `project`.:
 
 
 | Directory      | Description |
