@@ -1,25 +1,27 @@
 # Generating phylogenetic trees from multifasta files
 
 Now that we have the aligned multifasta files, we can perform a phylogenetic analysis for each one. The simplest approach is to estimate a maximum likelihood (ML) tree using IQ-TREE. The basic command is:
-`iqtree2 -s ./multifasta/window_01.fasta -m TEST -alrt 0 -pre ./trees/window_01
-Here, -s specifies the input alignment, and -pre sets the output file prefix. Because our goal is to integrate trees across windows rather than examine individual ones, we disable branch support calculations (-alrt 0) to speed up processing. The -m TEST option automatically selects the best-fitting substitution model.
+`iqtree2 -s ./multifasta/window_01.fasta -m TEST -alrt 0 -pre ./trees/window_01`
+Here, `-s` specifies the input alignment, and `-pre` sets the output file prefix. Because our goal is to integrate trees across windows rather than examine individual ones, we disable branch support calculations (`-alrt 0`) to speed up processing. The `-m TEST` option automatically selects the best-fitting substitution model.
 Because repeating this analysis for each window would be time-consuming, it is more efficient to automate the process with a script—either running the analyses sequentially or, preferably, in parallel. Below are example scripts for both approaches:
-Sequential execution:
+
+### 1. Loop based (sequential) execution:
+
+```bash
 #!/bin/bash
 
 cd ./multifasta
 
 for fasta in *; do
         echo "Analyzing: $fasta"
-       iqtree2 -s $fasta -m TEST -alrt O -pre ./trees/$fasta
-       echo "Finished analyzing: $fasta"
+        iqtree2 -s $fasta -m TEST -alrt O -pre ./trees/$fasta
+        echo "Finished analyzing: $fasta"
 done
+```
+### 2. Parallel execution:
 
-Parallel execution:
+```bash
 #!/bin/bash
-#PBS -N iqtree
-#PBS -l walltime=02:00:00
-#PBS -l nodes=1:ppn=9
 
 cd ./multifasta
 
@@ -30,8 +32,10 @@ FASTA=$(sed -n "${PBS_ARRAYID}p" windows_fasta.txt)
 echo "Analyzing: $FASTA"
 iqtree2 -s $FASTA -m TEST -alrt 0 -pre ./trees/$FASTA
 echo "Finished analyzing: $FASTA"
+```
 
 Each IQ-TREE run generates several output files. The most important is the .treefile, which contains the inferred maximum likelihood (ML) tree. To combine all resulting trees into a single file, use:
+```bash
 cd trees
 cat *.treefile > project.trees 
-
+```
