@@ -1,7 +1,9 @@
 # Generating phylogenetic trees from multifasta files
 
 Now that we have the aligned multifasta files, we can estimate a phylogenetic tree for each genomic region. The simplest approach is to estimate a maximum likelihood (ML) tree using IQ-TREE. The basic command is:
+
 `iqtree2 -s ./multifasta/window_01.fasta -m TEST -alrt 0 -pre ./trees/window_01`
+
 Here, `-s` specifies the input alignment, and `-pre` sets the output file prefix. Because our goal is to integrate trees across windows rather than examine individual ones, we disable branch support calculations (`-alrt 0`) to speed up processing. The `-m TEST` option automatically selects the best-fitting substitution model.
 Because repeating this analysis for each window would be time-consuming, it is more efficient to automate the process with a script—either running the analyses sequentially or, preferably, in parallel. Below are example scripts for both approaches:
 
