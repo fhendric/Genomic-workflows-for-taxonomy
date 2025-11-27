@@ -21,7 +21,7 @@ To define which regions you want to extract, you first need a BED file. A BED fi
 > module load BEDTools
 > 
 > GENOME="./genome/refgenome.fasta"
-> BED = “./bed/windows.bed”
+> BED = "./bed/windows.bed"
 > bedtools makewindows -g "$GENOME".fai -w 10000 -s 100000 > "$BED"
 > ```
 
