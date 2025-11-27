@@ -75,4 +75,4 @@ The genome sequence, stored in the ´./genome` directory, generally comes in reg
 
 ### Samples
 
-The `./samples` folder should contain a simple text file, called `samples.txt`, that lists all sample names. Important, the sample names should match the basename of the raw (or cleaned) fastq files. Hence, if the fastq files of the first sample are `sample01_1.fq.gz` and `sample01_2.fq.gz`, the sample name should be **sample01** in the `samples.txt`file. 
+The `./samples` folder should contain a simple text file, called `samples.txt`, that lists all sample names. Important, the sample names should match the basename of the raw (or cleaned) fastq files. Hence, if the fastq files of the first sample are `sample01_1.fq.gz` and `sample01_2.fq.gz`, the sample name in the `samples.txt`file should be **sample01** . 
