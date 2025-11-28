@@ -45,7 +45,6 @@ Another way to visualize the consistency in the topology among the trees is to s
 
 ```r
 # Load libraries
-
 library(phangorn)
 library(ape)
 
@@ -55,21 +54,17 @@ trees_iqtree<-read.tree(file='~/project/project.trees')
 class(trees_iqtree)<-"multiPhylo"
 
 # Step 1. Midpoint rooting of trees
-
 trees_rooted <- lapply(trees_iqtree, function(tr) midpoint(tr))
 class(trees_rooted)<-"multiPhylo"
 
 # Step 2. Transform to ultrametric trees
 # Options: "nnls" (non-negative least squares), "chronos", "force"
-
 trees_ultra <- lapply(trees_rooted, function(tr) chronos(tr,lambda=1))
 
 # Specify tip order for plotting
-
 tax_order1=c('sample_01','sample_02','sample03',...,’sample_12’)
 
 # Plot DensiTree
-
 class(trees_ultra)<-"multiPhylo"
 densiTree(trees_ultra,consensus=tax_order1,alpha=0.1,scaleX=T,direction="rightwards")
 ```
