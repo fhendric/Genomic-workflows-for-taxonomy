@@ -30,7 +30,9 @@ Once the BED file is ready, we can extract the sequences. The bash script below 
 
 ```bash
 
-cd ~/project/
+#!/bin/bash
+
+cd ~/project
 
 # Load modules
 
