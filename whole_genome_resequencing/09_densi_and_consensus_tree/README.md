@@ -3,7 +3,7 @@
 The previous step produced a large collection of phylogenetic trees, each representing the relationships among individuals for a different genomic region. Two approaches can provide an overall view of the genetic relationships among these individuals: (i) constructing a consensus tree that summarizes information across all individual trees, and (ii) visualizing the entire set of trees using a DensiTree graph.
 
 ### 1. Consensus tree
-We can generate a consensus species tree that integrates information from all individual gene trees using ASTRAL (1, 2). Using the `project.trees` file containing all ML trees, the ASTRAL species tree can be estimated with the following command:
+We can generate a consensus species tree that integrates information from all individual gene trees using **ASTRAL**. Using the `project.trees` file containing all ML trees, the ASTRAL species tree can be estimated with the following command:
 
 ```bash
 #!bin/bash
