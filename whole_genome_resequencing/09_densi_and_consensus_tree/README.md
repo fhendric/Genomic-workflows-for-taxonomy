@@ -23,7 +23,7 @@ This consensus tree can now be visualized with your program of choice, such as [
 Note that the branch lengths in the ASTRAL tree do not represent standard evolutionary distances, as in trees inferred directly from (concatenated) sequence data. Instead, they are measured in coalescent units and reflect the concordance among the individual trees. To quantify the degree of support for each clade, **gene concordance factors (gCFs)** can be calculated, indicating the percentage of trees that support a given branch. Using the `project.trees` file along with the ASTRAL species tree, gCFs can be computed in IQ-TREE with the following script:
 
 ```bash
-#!bin/bash
+#!/bin/bash
 
 cd ~/project
 
