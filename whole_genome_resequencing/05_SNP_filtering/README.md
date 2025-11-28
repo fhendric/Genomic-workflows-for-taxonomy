@@ -21,6 +21,14 @@ The raw VCF is typically very large because it includes all genomic positions, m
 To extract only SNPs, we use the `-v` snps option with **bcftools view**, which retains polymorphic sites of the specified type. Unlike the previous command where we used `-V` (uppercase) to exclude variant types, the lowercase `-v` explicitly includes only the types we want, in this case, SNPs.
 
 ```bash
+#!/bin/bash
+
+cd ~/project
+
+# Load modules
+module load BCFtools
+
+# Make VCF without indels
 VCF_RAW="./vcf/project.raw.vcf.gz"
 VCF_SNPS="./vcf/project.snps.vcf.gz"
 bcftools view -v snps -Oz -o "$VCF_SNPS" "$VCF_RAW"
