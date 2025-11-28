@@ -37,6 +37,8 @@ iqtree2 -t "$TREE_ASTRAL" --gcf "$TREES_WINDOWS" -pre "$OUT"
 ```
 
 And we can visualize this tree in FigTree:
+![vesubia.astral.contree](./images/vesubia.astral.png)
+
 
 
 
