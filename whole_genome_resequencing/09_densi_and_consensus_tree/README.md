@@ -24,9 +24,9 @@ Note that the branch lengths in the ASTRAL tree do not represent standard evolut
 cd ~/project
 
 # Define in and output trees
-TREE_ASTRAL="~/project/astral/project.astral.contree"
-TREES_WINDOWS="~/project/trees/project.trees"
-OUT="~/project/astral"
+TREE_ASTRAL="./astral/project.astral.contree"
+TREES_WINDOWS="./trees/project.trees"
+OUT="./astral"
 
 # Calculate gCF
 iqtree2 -t "$TREE_ASTRAL" --gcf "$TREES_WINDOWS" -pre "$OUT"
