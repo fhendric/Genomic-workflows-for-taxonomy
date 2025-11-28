@@ -12,11 +12,11 @@ Because repeating this analysis for each window would be timeconsuming, it is mo
 ```bash
 #!/bin/bash
 
-cd ./multifasta
+cd ~/project
 
-for fasta in *; do
+for fasta in ./multifasta/*; do
         echo "Analyzing: $fasta"
-        iqtree2 -s $fasta -m TEST -alrt O -pre ./trees/$fasta
+        iqtree2 -s "./multifasta/$fasta" -m TEST -alrt O -pre "./trees/$fasta"
         echo "Finished analyzing: $fasta"
 done
 ```
@@ -25,14 +25,14 @@ done
 ```bash
 #!/bin/bash
 
-cd ./multifasta
+cd ~/project
 
-ls . > windows_fasta.txt
+ls ./multifasta/ > ./multifasta/windows_fasta.txt
 
-FASTA=$(sed -n "${PBS_ARRAYID}p" windows_fasta.txt)
+FASTA=$(sed -n "${PBS_ARRAYID}p" ./multifasta/windows_fasta.txt)
 
 echo "Analyzing: $FASTA"
-iqtree2 -s $FASTA -m TEST -alrt 0 -pre ./trees/$FASTA
+iqtree2 -s "./multifasta/$FASTA" -m TEST -alrt 0 -pre "./trees/$FASTA"
 echo "Finished analyzing: $FASTA"
 ```
 
