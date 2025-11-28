@@ -10,8 +10,12 @@ We can generate a consensus species tree that integrates information from all in
 
 cd ~/project
 
+# Define in and output files
+TREE_ASTRAL="./astral/project.astral.contree"
+TREES_WINDOWS="./trees/project.trees"
+
 # Astral consensus tree
-java -jar  astral.5.6.3.jar -i ./trees/project.trees -o./astral/project.astral.contree´
+java -jar  astral.5.6.3.jar -i "$TREES_WINDOWS" -o "$TREE_ASTRAL"
 ```
 
 This consensus tree can now be visualized with your program of choice, such as [FigTree](https://tree.bio.ed.ac.uk/software/figtree/).
