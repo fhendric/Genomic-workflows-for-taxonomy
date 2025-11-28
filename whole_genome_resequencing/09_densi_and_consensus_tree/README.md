@@ -41,7 +41,7 @@ And we can visualize this tree in FigTree:
 
 ### 2. Plot DensiTree
 
-Another way to visualize the consistency in the topology among the trees is to superimpose all the trees on each other, which is called a DensiTree. The R package *phangorn* has a function to do this. Before the trees are superimposed, it is important to ammply the same rooting to the trees (e.g. midpoint rooting in absence of an outgroup) and make the trees ultrametric such that the tips align properly. Below is some R code to plot a densitree:
+Another approach to visualize the consistency of tree topologies is to superimpose all the trees, a method known as a **DensiTree**. The R package *phangorn* provides a function to create such visualizations. Before superimposing the trees, it is important to ensure they share the same rooting (for example, using midpoint rooting if no outgroup is available) and to make the trees ultrametric so that the tips align properly. The following R code demonstrates how to plot a DensiTree:
 
 ```r
 # Load libraries
@@ -69,5 +69,6 @@ class(trees_ultra)<-"multiPhylo"
 densiTree(trees_ultra,consensus=tax_order1,alpha=0.1,scaleX=T,direction="rightwards")
 ```
 
+And should render a figure like this:
 
 
