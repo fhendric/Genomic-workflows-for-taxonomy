@@ -27,7 +27,7 @@ Note that the branch lengths in the ASTRAL tree do not represent standard evolut
 
 cd ~/project
 
-# Define in and output trees
+# Define in and output files
 TREE_ASTRAL="./astral/project.astral.contree"
 TREES_WINDOWS="./trees/project.trees"
 OUT="./astral"
