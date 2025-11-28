@@ -10,7 +10,17 @@ The output is a standardized **Variant Call Format (VCF)** file, which stores th
 Given a set of BAM files, we will use the following bcftools command to perform SNP calling and to generate a compressed VCF (=BCF) file:
 
 ```bash
+#!/bin/bash
+
+cd ~/project
+
+# Load modules
+module load BCFtools
+
+# Define output VCF
 VCF_RAW="./vcf/project.raw.vcf.gz"
+
+# SNP calling
 bcftools mpileup --min-MQ 30 -a AD,DP,SP -Ou -f "$GENOME" sample01.rmd.bam sample02.rmd.bam sample03.rmd.bam ... | bcftools call -f GQ,GP -m -Oz -o "$VCF_RAW"
 ```
 
