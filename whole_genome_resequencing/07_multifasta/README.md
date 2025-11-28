@@ -17,7 +17,7 @@ To define which regions you want to extract, you first need a BED file. A BED fi
 > - The step size (`-s`)
 > The BED file can then be generated with the following command:
 > ```bash
->
+> # Load modules
 > module load BEDTools
 > 
 > GENOME="./genome/refgenome.fasta"
@@ -29,6 +29,9 @@ To define which regions you want to extract, you first need a BED file. A BED fi
 Once the BED file is ready, we can extract the sequences. The bash script below will create multifasta files for each defined window. Note that the script also includes the generation of the BED file (Step1) and this step should be silenced if you already have a BED file available. 
 
 ```bash
+
+cd ~/project/
+
 # Load modules
 
 module load BEDTools
