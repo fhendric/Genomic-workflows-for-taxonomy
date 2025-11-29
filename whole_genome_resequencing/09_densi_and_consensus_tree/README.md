@@ -70,5 +70,6 @@ densiTree(trees_ultra,consensus=tax_order1,alpha=0.1,scaleX=T,direction="rightwa
 ```
 
 And should render a figure like this:
+![vesubia.densitree](../images/vesubia.densitree.png)
 
 
