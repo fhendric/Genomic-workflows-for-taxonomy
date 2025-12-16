@@ -30,6 +30,5 @@ Each workflow is modular and reproducible, guiding you from raw data to meaningf
 ## Acknowledgments
 
 This project has been funded and is being developed as part of [TETTRIs - Task 6.2, WP6](https://tettris.eu).
-
-![tettris](./images/TETTRIs_logo.png)
+<img src="./images/TETTRIs_logo.png" alt="tettris logo" width="200"/>
 ![EU](./images/EU_funding_banner.png)
