@@ -25,3 +25,10 @@ Each workflow is modular and reproducible, guiding you from raw data to meaningf
 - [Whole-Genome Resequencing Data](./whole_genome_resequencing/)
 - [RAD/GBS with Reference Genome](./rad_gbs_with_reference/)
 - [RAD/GBS without Reference Genome](./rad_gbs_without_reference/)
+
+
+## Acknowledgments
+
+This project has been funded and is being developed as part of [TETTRIs - Task 6.2, WP6](https://tettris.eu).
+
+![tettris](./imgagess/tettris.png)
