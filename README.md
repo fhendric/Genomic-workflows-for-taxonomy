@@ -1,5 +1,9 @@
 # Genomic Workflows for Taxonomy
 
+<p align="right">
+  <img src="./images/TETTRIs_logo.png" alt="tettris logo" width="200"/>
+</p>
+
 Authors: Frederik Hendrickx and Carl Vangestel, 2025
 
 License: CC-BY 4.0
