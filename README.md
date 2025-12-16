@@ -1,6 +1,6 @@
-<div style="display: flex; align-items: center; justify-content: space-between;">
-  <h1>Genomic Workflows for Taxonomy</h1>
-  <img src="./images/TETTRIs_logo.png" alt="tettris logo" width="100"/>
+<div style="display: flex; align-items: center;">
+  <h1 style="margin-right: 20px;">Genomic Workflows for Taxonomy</h1>
+  <img src="./images/TETTRIs_logo.png" alt="tettris logo" width="80"/>
 </div>
 
 Authors: Frederik Hendrickx and Carl Vangestel, 2025
