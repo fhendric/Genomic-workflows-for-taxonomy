@@ -71,7 +71,7 @@ FFFFFFEFCEEGEFEDFF@FDFFFFF?FEFEFFFFFF<BFFFDFFFFF8GFFFFFFDF6;EFFFFF=F;GFEFAFFF9FF
 
 ### Genome (fasta) 
 
-The genome sequence, stored in the ´./genome` directory, generally comes in regular fasta format with each genomic sequence (contig, scaffold or chromosome) coming in two lines. The first line, starting with “>”, gives the name of the sequence, while the second line gives the actual nucleotide sequence.  
+The genome sequence, stored in the `./genome` directory, generally comes in regular fasta format with each genomic sequence (contig, scaffold or chromosome) coming in two lines. The first line, starting with “>”, gives the name of the sequence, while the second line gives the actual nucleotide sequence.  
 
 ### Samples
 
