@@ -1,3 +1,4 @@
-Restriction-Associated DNA sequencing and Genotyping-by-Sequencing
+# Restriction-Associated DNA sequencing and Genotyping-by-Sequencing
 
-Description of this workflow step, tools, commands, inputs, and outputs.
+## Intro
+This section describes the workflow to infer patterns of species divergence using **whole-genome sequencing data of multiple individuals**. The analysis assumes the availability of Illumina or DNB sequencing reads covering the entire genome of multiple individuals of the same or related species in fastq format, as well as a reference genome of the focal or a closely related species. The workflow describes how to preprocess (clean) the raw sequencing reads, map the reads to the reference genome, identify single nucleotide polymorphisms (SNPs), perform different types analysis on the genetic relationship between the individuals and visualize the results. The workflow is provided in different components that are generally run sequentially, but can be performed individually given the correct input file formats.Description of this workflow step, tools, commands, inputs, and outputs.
