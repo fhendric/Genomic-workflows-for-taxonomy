@@ -7,12 +7,7 @@ This section describes the workflow to infer patterns of species divergence usin
 
 ### Workflow components
 - [1. Directory structure, data format and tools](./01_dataformat_and_tools/)
-- [2. Clean reads](./02_data_cleaning/)
-- [3. Map reads](./01_mapping)
+- [2. Clean reads](./02_preprocessing_data/)
+- [3. Map reads](./03_read_mapping)
 - [4. Calling Single Nucleotide Variants (SNPs)](./04_SNP_calling)
 - [5. Filter SNPs](./05_SNP_filtering)
-- [6. Generate genomic consensus sequence for each individual](./06_consensus_sequences)
-- [7. Generate multifasta files for predefined genomic regions](./07_multifasta)
-- [8. Generate trees per region](./08_tree_estimation)
-- [9. Combine trees and make consensus tree](./09_densi_and_consensus_tree)
-![Workflow_components](./images/Visualisation_workflow.svg)
