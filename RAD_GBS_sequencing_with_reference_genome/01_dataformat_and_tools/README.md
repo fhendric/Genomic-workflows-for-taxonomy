@@ -20,7 +20,7 @@ Before we start, it is most convenient to set up an organized directory structur
 | BCFTOOLS  | SNP calling and filtering vcf files (https://www.htslib.org/) |
 | BWA       | Mapping low-divergent short reads to a reference genome (https://github.com/lh3/bwa) |
 | SAMTOOLS  | Suite of programs for interacting with high-throughput sequencing data (https://www.htslib.org/) |
-| R packages| *adegenet* (Exploratory Analysis of Genetic and Genomic Data): contain a set of tools to explore genomic data, such as multivariate functions for analysis of DNA sequences and phylogenetic trees ([https://cran.r-project.org/web/packages/ape/index.html](https://cran.r-project.org/web/packages/adegenet/index.html))|
+| R packages| *adegenet* (Exploratory Analysis of Genetic and Genomic Data): contain a set of tools to explore genomic data, such as multivariate functions for analysis of SNP data ([https://cran.r-project.org/web/packages/ape/index.html](https://cran.r-project.org/web/packages/adegenet/index.html))|
 
 ## Input data formats
 
