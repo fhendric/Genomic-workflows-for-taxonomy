@@ -21,7 +21,7 @@ Before we start, it is most convenient to set up an organized directory structur
 | BWA       | Mapping low-divergent short reads to a reference genome (https://github.com/lh3/bwa) |
 | SAMTOOLS  | Suite of programs for interacting with high-throughput sequencing data (https://www.htslib.org/) |
 |PAUP*| Phylogenetic software program to estimate a species trees from SNPs using the SVDQuartets method (https://paup.phylosolutions.com/)| 
-| R packages| *adegenet* (Exploratory Analysis of Genetic and Genomic Data): contain a set of tools to explore genomic data, such as multivariate methods to provide low-dimensional visualization of SNP variaton (https://cran.r-project.org/web/packages/adegenet/index.html)|
+| R packages| *adegenet* (Exploratory Analysis of Genetic and Genomic Data): contains a set of explorative tools such as multivariate methods to provide low-dimensional visualization of SNP variaton (https://cran.r-project.org/web/packages/adegenet/index.html)|
 
 ## Input data formats
 
